@@ -1,7 +1,28 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
 <body>
+<div class="login">
+<div class="form">
+<form class="register">
+<input type="text" placeholder="user name"/>
+<input type="text" placeholder="password"/>
+<input type="email" placeholder="email id"/>
+<button class="submitid">create</button>
+<p class="message">Already registered?<a href="#" style="color:black">Login</a></p>
+</form>
+
+<form class="log">
+<input type="text" placeholder="username"/>
+<input type="password" placeholder="password"/>
+<button  class="id">Login</button>
+<p class="message">Not Registered yet?<a href="#" style="color:black">Register</a></p>
+</form>
+</div>
+</div>
+
 <div class="navbar">
 <a href="about.html">About</a>
   <div class="dropdown">
@@ -38,6 +59,30 @@
     </div>
   </div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+<script>
+var x;
+$('.message a').click(function(){
+$('form').animate({height:"toggle",opacity:"toggle"},"slow");
+});
+
+$(document).ready(function(){
+x=setTimeout(function(){
+$('.login').css('display','block');
+},5000)});
+
+$('.submitid').click(function(){
+$('.login').css('display','none');
+clearTimeout(x);
+});
+$('.id').click(function(){
+$('.login').css('display','none');
+clearTimeout(x);
+});
+</script>
 </body>
-</head>
 </html>
