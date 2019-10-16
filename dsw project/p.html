@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.body{
+font-family:verdana;
+}
+#btn{
+padding:15px 32px;
+font-size:16px;
+background-color:#4CAF50;
+text-align:center;
+color:white;
+opacity:0.85;
+}
+#btn:hover{
+opacity:1;
+}
+.ben{
+float:left;
+padding:15px;
+margin:15px;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.select-items:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;}
+.opt{
+height:250px;
+width:250px;
+}
+.opt:hover{
+opacity:0.8;
+border:solid black 5px;
+}
+.o{
+margin-left:25px;
+}
+</style>
+  <title>Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="body">
+
+<div class="container-fluid">
+  <h1 style="margin-bottom:30px">The Nike Sneakers</h1>
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">
+	<h3>Preview Of The Product</h3><br>
+	<div class="row" style="float:left;margin-right:10px">
+  <div class="column">
+    <img src="sneak.jpg" class="i" height="50px" width="50px" onmouseover="myFunction(this);">&nbsp&nbsp
+  </div>
+  <div class="column">
+    <img src="sneak2.jpg" class="i" height="50px" width="50px" onmouseover="myFunction(this);">&nbsp&nbsp
+  </div>
+  <div class="column">
+    <img src="sneak3.jpg" class="i" height="50px" width="50px" onmouseover="myFunction(this);">&nbsp&nbsp
+  </div>
+  <div class="column">
+    <img src="sneak4.jpg" class="i" height="50px" width="50px" onmouseover="myFunction(this);">&nbsp&nbsp
+  </div>
+</div>
+<div class="container">
+  <img src="sneak.jpg" id="expandedImg" style="margin-top:20px" width="400px" height="350px">
+</div>
+	</div>
+    <div class="col-sm-5" style="background-color:lavenderblush;">
+	<h3>Product Details</h3><br>
+	M.R.P:<s>₹ 5000</s><br>
+	Our price:₹ 2000<br>
+	Net Savings:₹ 3000(40%OFF)<br>
+	Benefits:<br>
+	<div>
+	<div class="ben">
+	<img src="qual.jpg"  height="50px" width="50px">
+	<div class="des">Quality<br>Assured</div>
+	</div>
+	<div class="ben">
+	<img src="deliver.jpg" height="50px" width="50px">
+	<div class="des">Delivery<br>within <br>4 Days.</div>
+	</div>
+	<div class="ben">
+	<img src="warr1.jpg" height="50px" width="50px">
+	<div class="des">1 Year<br>Warranty</div>
+	</div>
+	<br>
+	<div style="margin-left:20px;">
+	<img src="return.png" height="50px" width="50px">
+	<div class="des">30 Days<br>Of<br>Return&Exchange </div>
+	</div>
+	</div>
+	<br><br><br>
+	<b>Specifications:</b><br>
+	Color:
+	<div>
+	<div class="ben">
+	<img src="blue.jpg" onclick="col(this);" height="50px" width="50px">
+	<div class="des">Blue</div>
+	</div>
+	<div class="ben">
+	<img src="sneak.jpg" onclick="col(this);" height="50px" width="50px">
+	<div class="des">White</div>
+	</div>
+	</div>
+	<br><br><br><br><br><br>
+	<div>
+    Size:&nbsp&nbsp<select name="size">
+	<option class="select-items" value="6">6</option>
+	<option class="select-items" value="7">7</option>
+	<option class="select-items"  value="8">8</option>
+	<option class="select-items" value="9">9</option>
+	<option class="select-items"  value="10">10</option>
+	</select>
+	</div>
+	<br><br>
+	<!--
+	<p>
+	<ul>
+	<li>Material Type: Canvas</li>
+	<li>Lifestyle: Casual</li>
+	<li>Product</li>
+	</ul>
+	</p>
+	-->
+	<button id="btn">Add To Cart</button>
+	</div>
+    <div class="col-sm-3" style="background-color:lavender;">
+<h3>Frequently Bought Together</h3><br>
+<div class="o">
+<img class="opt" src="opt1.png">
+<div>Opt1</div>
+</div>
+<div class="o">
+<br>
+<img class="opt" src="opt2.png">
+<div>Opt2</div>
+</div>
+<br>
+<div class="o">
+<img class="opt" src="opt3.png">
+<div>Opt3</div>
+</div>
+  </div>
+  </div>
+  </div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.elevateZoom-3.0.8.min.js"></script>
+<script>
+$("#expandedImg").elevateZoom();
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  $("#expandedImg").data('zoom-image',imgs.src).elevateZoom({
+}); 
+  expandImg.parentElement.style.display = "block";
+}
+function col(imgs){
+var expandImg = document.getElementById("expandedImg");
+var y=document.getElementsByClassName("i");
+if(imgs.src.indexOf("sneak.jpg") != -1){
+expandImg.src="sneak.jpg";
+y[0].src="sneak.jpg";
+y[1].src="sneak2.jpg";
+y[2].src="sneak3.jpg";
+y[3].src="sneak4.jpg";
+}
+else if(imgs.src.indexOf("blue.jpg") != -1){
+expandImg.src="blue.jpg";
+y[0].src="blue.jpg";
+y[1].src="blue1.jpg";
+y[2].src="blue2.jpg";
+y[3].src="blue3.jpg";
+}
+}
+</script>
+</body>
+</html>
